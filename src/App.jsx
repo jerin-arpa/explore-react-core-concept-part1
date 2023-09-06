@@ -5,11 +5,24 @@ import './App.css'
 import Todo from './todo'
 import Actor from './actor'
 import Singer from './Singer'
+import BookStore from './BookStore'
+import Book from './Book'
+
+
 
 function App() {
 
   const actors = ['Sakib Khan', 'Raj', 'Jasim', 'Rubel', 'Salman Shah'];
 
+
+
+
+  const books = [
+    { id: 1, name: 'Physics', price: 100 },
+    { id: 2, name: 'Chemistry', price: 200 },
+    { id: 3, name: 'Biology', price: 250 },
+    { id: 4, name: 'Math', price: 300 },
+  ]
 
 
   const singers = [
@@ -23,7 +36,9 @@ function App() {
 
   return (
     <>
-      <h3>Vite + React</h3>
+      <h1>Vite + React</h1>
+
+      <BookStore books={books}></BookStore>
 
 
       {
