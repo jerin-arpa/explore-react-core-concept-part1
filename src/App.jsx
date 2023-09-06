@@ -4,31 +4,59 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
       <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Device name="laptop" price="55000"></Device>
+      <Device name="mobile" price="17000"></Device>
+      <Device name="watch" price="3000"></Device>
+      <Person></Person>
+      <Student grade="7" score="99"></Student>
+      <Student></Student>
+      <Student></Student>
+      <Developer></Developer>
     </>
+  )
+}
+
+
+function Device(props) {
+  return <h2>This Device: {props.name}, price: {props.price}</h2>
+}
+
+
+function Person() {
+  const age = 20;
+  const money = 3;
+  const person = { name: 'jerry', age: 24 }
+  return <h3>I am {person.name} with age: {age + money}</h3>
+}
+
+
+const { grade, score } = { grade: '7', score: '99' };
+function Student(props) {
+  return (
+    <div className='student'>
+      <h3>This is a student</h3>
+      <p>Name:</p>
+      <p>Age:</p>
+    </div>
+  )
+}
+
+
+function Developer() {
+  const developerStyle = {
+    margin: '20px',
+    padding: '20px',
+    border: '2px solid purple',
+    borderRadius: '10px',
+  }
+  return (
+    <div style={developerStyle}>
+      <h5>developer Developer</h5>
+      <p>Coding:</p>
+    </div>
   )
 }
 
